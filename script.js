@@ -67,3 +67,14 @@ allBtns.forEach((btn) => {
 const display = (str) => {
   displayElm.innerText = str || "0";
 };
+
+const total = () => {
+  const extraVal = randomValue();
+  if (extraVal) {
+    displayElm.classList.add("prank");
+    audio.play();
+  }
+  const ttl = eval(strToDisplay) + extraVal;
+  strToDisplay = ttl.toString();
+  display(ttl);
+};
