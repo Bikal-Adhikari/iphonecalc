@@ -44,3 +44,13 @@ const buttonAction = (value) => {
   strToDisplay += value;
   display(strToDisplay);
 };
+
+//capture the key press event
+document.addEventListener("keypress", (e) => {
+  const value = e.key;
+  if (e.code.includes("Key")) {
+    return;
+  }
+
+  buttonAction(value);
+});
