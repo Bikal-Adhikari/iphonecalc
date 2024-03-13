@@ -78,3 +78,8 @@ const total = () => {
   strToDisplay = ttl.toString();
   display(ttl);
 };
+
+const randomValue = () => {
+  const num = Math.round(Math.random() * 10);
+  return num <= 3 ? num : 0;
+};
