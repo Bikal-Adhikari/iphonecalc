@@ -21,4 +21,26 @@ const buttonAction = (value) => {
     }
     return total();
   }
+
+  if (operators.includes(value)) {
+    lastOperator = value;
+    const lc = strToDisplay[strToDisplay.length - 1];
+    if (operators.includes(lc)) {
+      strToDisplay = strToDisplay.slice(0, -1);
+    }
+  }
+
+  if (value === ".") {
+    const lastOperatorIndex = strToDisplay.lastIndexof(lastOperator);
+    const lastNumberSet = strToDisplay.slice(lastOperatorIndex);
+
+    if (lastNumberSet.includes(".")) {
+      return;
+    }
+    if (!lastOperator && strToDisplay.includes(".")) {
+      return;
+    }
+  }
+  strToDisplay += value;
+  display(strToDisplay);
 };
