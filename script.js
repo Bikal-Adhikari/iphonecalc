@@ -54,3 +54,16 @@ document.addEventListener("keypress", (e) => {
 
   buttonAction(value);
 });
+
+allBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    displayElm.classList.remove("prank");
+
+    const value = btn.innerText;
+    buttonAction(value);
+  });
+});
+
+const display = (str) => {
+  displayElm.innerText = str || "0";
+};
